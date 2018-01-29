@@ -3,7 +3,10 @@
   <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback" class="swiper-banner">
     <!-- slides -->
     <swiper-slide v-for="(slide,index) in slides" :key="index">
-        <img :src="slide.picUrl" alt="" style="height:280px;width:80%">
+        <img :src="slide.sPicUrl" alt="" style="height:200px;width:100%">
+        <div class="name-box">
+          <p class="name">{{slide.name}}</p>
+        </div>
     </swiper-slide>
     <!-- Optional controls -->
     <div class="swiper-pagination"  slot="pagination"></div>
@@ -23,7 +26,6 @@
           // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
           // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
           notNextTick: true,
-          spaceBetween: 20,
           slidesPerView:1,
           // swiper configs 所有的配置同swiper官方api配置
           autoplay: {
@@ -74,7 +76,7 @@
       }
     },
     created(){
-        this.$axios.get('http://localhost:8888/personalized/djprogram',{
+        this.$axios.get('http://localhost:8888/personalized/privatecontent',{
             parmas:{}
         })
         .then((res)=>{
@@ -89,11 +91,13 @@
 </script>
 
 <style>
-    .swiper-wrapper {height:200px;margin:0 auto;width: 80%;}
+    .swiper-wrapper {height:200px;}
     .swiper-banner .swiper-container {width:100%;height:200px;}
-    .swiper-banner .swiper-container .swiper-slide {height: 200px;}
+    .swiper-banner .swiper-container .swiper-slide {height: 200px;position: relative;}
     .swiper-banner .swiper-container .swiper-slide img{height: 300px;width: 100%;}
     .swiper-banner .swiper-pagination-bullet {width: 6px;height: 6px;margin:0 0.4rem;}
     .swiper-banner .swiper-pagination-bullet-active {background: #fff;}
-    .swiper-banner .swiper-pagination-fraction,.swiper-banner .swiper-pagination-custom,.swiper-banner .swiper-container-horizontal > .swiper-pagination-bullets {bottom: 1rem;}
+    .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {opacity: 0;}
+    .name-box {width: 100%;height: 30px;position: absolute;left: 0;bottom: 0;background:rgba(0,0,0,0.5);}
+    .name {color:#fff;text-align: center;font-size: 16px;line-height: 30px;}
 </style>  

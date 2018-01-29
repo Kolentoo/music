@@ -2,15 +2,12 @@
     <div class="index">
         <vheader></vheader>
         <vtab></vtab>
-        <swiper></swiper>
-        <recommend></recommend>
     </div>
 </template>
 
 <script>
     import vheader from '../components/header/header'
     import vtab from '../components/tab/tab'
-    import recommend from '../components/recommend/recommend'
     import swiper from '../components/swiper/swiper'
     export default{
         data(){
@@ -19,7 +16,7 @@
             }
         },
         components:{
-            vheader,vtab,recommend,swiper
+            vheader,vtab,swiper
         },
         created(){
             let uid = sessionStorage.getItem('uid');

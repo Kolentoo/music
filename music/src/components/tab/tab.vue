@@ -6,7 +6,9 @@
     <mu-tab value="tab3" @active="handleActive" title="搜索"/>
   </mu-tabs>
   <div v-if="activeTab === 'tab1'">
+        <swiper></swiper>
         <recommend></recommend>
+        <song></song>
   </div>
   <div v-if="activeTab === 'tab2'">
     <h2>Tab Two</h2>
@@ -24,7 +26,9 @@
 </template>
 
 <script>
-    import recommend from '../../pages/recommend'
+    import swiper from '../../components/swiper/swiper'
+    import recommend from '../../components/recommend/recommend'
+    import song from '../../components/song/song'
     export default {
     data () {
         return {
@@ -32,7 +36,7 @@
         }
     },
     components:{
-        recommend
+        recommend,swiper,song
     },
     methods: {
         handleTabChange (val) {
