@@ -4,13 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import MuseUI from 'muse-ui'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-default.css'
 import './assets/styles/core.css'
 
-import VueValidator from 'vue-validator'
-Vue.use(VueValidator)
-
+Vue.use(VueAwesomeSwiper)
 Vue.use(MuseUI)
 Vue.config.productionTip = false
 

@@ -17,9 +17,9 @@
             </div>
             
         </mu-paper>
-        <!--@click="open('top')"-->
+
         <div class="container" @click="login()">
-            <mu-raised-button label="登录" class="demo-raised-button" secondary fullWidth :class="{information:ok}"/>
+            <mu-raised-button label="登录" class="demo-raised-button" primary fullWidth :class="{information:ok}"/>
         </div>
         <mu-popup position="top" :overlay="false" popupClass="demo-popup-top" :open="topPopup">
             {{errMsg}}
@@ -36,10 +36,10 @@
                 topPopup: false,
                 errMsg:'',
                 forms:{
-                    phoneNum:'',
-                    passWord:'',
+                    phoneNum:'15026753453',
+                    passWord:'515835543',
                 },
-                ok:true,
+                ok:false,
                 load:false,
                 mk:false
             }
@@ -48,12 +48,14 @@
             login(){
                 let cphone = this.forms.phoneNum
                 let psd = this.forms.passWord
-                this.load=true
-                this.mk=true
-                // if(this.ok=true){
+                let ndate = new Date().valueOf()
+
+                // this.load=true
+                // this.mk=true
+                // if(this.ok==true){
                 //     this.errMsg='请填写登录信息'
                 //     this['top' + 'Popup'] = true
-                // }else if(this.ok=false){
+                // }else if(this.ok==false){
                     this.$axios.get('http://localhost:8888/login/cellphone', {
                         params: {
                             'phone':cphone,
@@ -65,8 +67,11 @@
                             this.errMsg ='登录成功'
                             this.load=false
                             this.mk=false
+                            console.log(res)
+                            let uid = res.data.account.id
+                            sessionStorage.setItem('uid',uid);
                             setTimeout(function() {
-                                window.location.href='/index'
+                                window.location.href='/music' 
                             }, 200);
                         }else{
                             this.errMsg ='登录失败'
@@ -137,10 +142,10 @@
     .login {margin-top: 50px;}
     .mu-paper {margin-top: 50px;}
     .iconfont {font-size: 20px;display: inline-block;position: relative;top:1px;margin-left: 15px;}
-    .icon-erji {font-size: 40px;text-align: center;color:#ff4081;display: inline-block;} 
-    .login .title {font-size: 22px;color:#ff4081;}
+    .icon-erji {font-size: 40px;text-align: center;color:#7e57c2;display: inline-block;} 
+    .login .title {font-size: 22px;color:#7e57c2;}
     .information {background: #ccc;}
-    .progress {color:#ff4081;position: fixed;top: 50%;left: 50%;margin:-15px 0 0 -15px;opacity: 0;transition:all ease 0.5s;
+    .progress {color:#7e57c2;position: fixed;top: 50%;left: 50%;margin:-15px 0 0 -15px;opacity: 0;transition:all ease 0.5s;
     z-index:-1;}
     .loading {opacity: 1;z-index:500;}
     .maskoff {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(255,255,255,0);transition:all ease 0.5s;z-index:-1;}
