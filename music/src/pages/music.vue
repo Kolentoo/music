@@ -2,6 +2,7 @@
     <div class="index">
         <vheader></vheader>
         <vtab></vtab>
+        <div class="bottom"></div>
     </div>
 </template>
 
@@ -21,7 +22,7 @@
         created(){
             let uid = sessionStorage.getItem('uid');
             // this.$axios.get('http://localhost:8888/user/detail',{
-            //     parmas:{
+            //     params:{
             //         'uid':uid
             //     }
             // })
@@ -37,5 +38,5 @@
 </script>
 
 <style scoped>
-
+    .bottom {background: url('../assets/images/bottom.png') no-repeat 65% center;background-size: cover;height: 200px;}
 </style>

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import axios from 'axios'
 import login from '@/pages/login'
 import music from '@/pages/music'
+import play from '@/pages/play'
 
 Vue.use(Router)
 Vue.prototype.$axios = axios
@@ -21,6 +22,11 @@ export default new Router({
       path: '/music',
       name: 'music',
       component: music
+    },
+    {
+      path: '/play',
+      name: 'play',
+      component: play
     }
   ]
 })

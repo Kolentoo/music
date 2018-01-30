@@ -9,7 +9,10 @@ import 'swiper/dist/css/swiper.css'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-default.css'
 import './assets/styles/core.css'
+import store from '../src/vuex/store'
+import Vuex from 'vuex'
 
+Vue.use(Vuex)
 Vue.use(VueAwesomeSwiper)
 Vue.use(MuseUI)
 Vue.config.productionTip = false
@@ -18,6 +21,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
