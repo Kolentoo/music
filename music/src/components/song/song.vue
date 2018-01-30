@@ -36,7 +36,7 @@
         methods:{
             getid(song){
                 this.$store.store.commit('increment',song.id)
-                console.log(song.id)
+                window.location.href='play?'+song.id
             }
         }
     }

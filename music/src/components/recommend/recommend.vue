@@ -25,6 +25,7 @@ export default {
         parmas:{}
     })
     .then((res)=>{
+        console.log(res)
         this.title=res.data.name
         this.list = res.data.programs
     })

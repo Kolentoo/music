@@ -2,7 +2,6 @@
     <div class="index">
         <vheader></vheader>
         <vtab></vtab>
-        <div class="bottom"></div>
     </div>
 </template>
 
@@ -38,5 +37,5 @@
 </script>
 
 <style scoped>
-    .bottom {background: url('../assets/images/bottom.png') no-repeat 65% center;background-size: cover;height: 200px;}
+
 </style>

@@ -2,8 +2,8 @@
 <div>
   <mu-tabs :value="activeTab" @change="handleTabChange">
     <mu-tab value="tab1" title="推荐"/>
-    <mu-tab value="tab2" title="排行榜"/>
-    <mu-tab value="tab3" @active="handleActive" title="搜索"/>
+    <mu-tab value="tab2" title="MV"/>
+    <mu-tab value="tab3" @active="handleActive" title="电台"/>
   </mu-tabs>
   <div v-if="activeTab === 'tab1'">
         <swiper></swiper>
