@@ -4,11 +4,13 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    count: ''
+    count: '',
+    mvid:''
   },
   mutations: {
     increment (state,data) {
       state.count = data
+      state.mvid = data
     }
   }
 })

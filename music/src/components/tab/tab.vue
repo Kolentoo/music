@@ -11,16 +11,11 @@
         <song></song>
   </div>
   <div v-if="activeTab === 'tab2'">
-    <h2>Tab Two</h2>
-    <p>
-      这是第二个 tab
-    </p>
+    <mv></mv>
   </div>
   <div v-if="activeTab === 'tab3'">
     <h2>Tab Three</h2>
-    <p>
-      这是第三个 tab
-    </p>
+    <dj></dj>
   </div>
 </div>
 </template>
@@ -29,6 +24,8 @@
     import swiper from '../../components/swiper/swiper'
     import recommend from '../../components/recommend/recommend'
     import song from '../../components/song/song'
+    import mv from '../../pages/mv'
+    import dj from '../../pages/dj'
     export default {
     data () {
         return {
@@ -36,14 +33,14 @@
         }
     },
     components:{
-        recommend,swiper,song
+        recommend,swiper,song,mv,dj
     },
     methods: {
         handleTabChange (val) {
         this.activeTab = val
         },
         handleActive () {
-        window.alert('tab active')
+        // window.alert('tab active')
         }
     }
 }

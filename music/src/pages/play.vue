@@ -30,7 +30,7 @@
                 rotate:false,
                 sname:'',
                 author:'',
-                use:false
+                use:true
             }
         },
         created(){
@@ -72,12 +72,12 @@
                     document.getElementById('voice').play();
                     this.rotate=true
                     this.show=true
-                    this.use=true
+                    this.use=false
                 }else{
                     document.getElementById('voice').pause();
                     this.rotate=false
                     this.show=false
-                    this.use=false
+                    this.use=true
                 }
             }
         }
@@ -98,8 +98,8 @@
     .show {display: none;}
     .rotate {animation: disc 12s linear infinite;}
     .s-detail {width: 400px;margin:20px auto 0;}
-    .sname {font-size: 20px;color:#fff;}
-    .author {color:#fff;}
+    .sname {font-size: 20px;color:#fff;margin:0 80px;}
+    .author {color:#fff;margin-top: 5px;}
     @keyframes disc{
         0% {transform:rotate(0deg);}
         100% {transform:rotate(360deg);}
