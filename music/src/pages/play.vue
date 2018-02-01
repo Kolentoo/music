@@ -34,14 +34,10 @@
             }
         },
         created(){
-            // console.log(this.$store.store.state.count)
-            let curl = window.location.href
-            let sid = curl.split('?')
-            console.log(sid)
             let songid = this.$store.store.state.count
             this.$axios.get('http://localhost:8888/music/url',{
                 params:{
-                    'id':sid[1]
+                    'id':songid
                 }
             })
             .then((res)=>{
@@ -53,7 +49,7 @@
 
             this.$axios.get('http://localhost:8888/song/detail',{
                 params:{
-                    'ids':sid[1]
+                    'ids':songid
                 }
             })
             .then((res)=>{

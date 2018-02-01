@@ -21,12 +21,10 @@
             }
         },
         created(){
-            console.log(this.$store.store.state.count)
             this.$axios.get('http://localhost:8888/personalized/newsong',{
                 params:{}
             })
             .then((res)=>{
-                console.log(res)
                 this.songs = res.data.result
             })
             .catch((err)=>{
@@ -36,7 +34,7 @@
         methods:{
             getid(song){
                 this.$store.store.commit('increment',song.id)
-                window.location.href='play?'+song.id
+                this.$router.push(`play?'${song.id}`)
             }
         }
     }
