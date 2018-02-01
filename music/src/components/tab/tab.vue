@@ -14,7 +14,6 @@
     <mv></mv>
   </div>
   <div v-if="activeTab === 'tab3'">
-    <h2>Tab Three</h2>
     <dj></dj>
   </div>
 </div>
@@ -29,7 +28,7 @@
     export default {
     data () {
         return {
-        activeTab: 'tab1'
+        activeTab: 'tab3'
         }
     },
     components:{
