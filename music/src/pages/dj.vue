@@ -12,6 +12,7 @@
             </mu-grid-list>
         </div>
         <div class="dj-recom">
+            <p class="title">电台节目</p>
             <ul class="recom-con">
                 <li class="recom-list" v-for="(recom,index) in recoms">
                     <div class="chart">
@@ -71,9 +72,11 @@ export default {
   width: 500px;
   overflow-y: auto;
 }
-
-.recom-con {display:flex;justify-content:center;flex-direction:column;flex-wrap:wrap;}
-.recom-list {width: 30%;}
+.title {color: rgba(0, 0, 0, 0.54);font-size: 14px;line-height: 48px;padding-left: 16px;width: 100%;}
+.recom-con {display:flex;justify-content:center;flex-wrap:wrap;}
+.recom-list {width: 30%;margin:0 1.2% 10px;}
+.recom-list:last-child {display: none;}
 img{width: 100%;}
+.djdesc {height: 18px;overflow: hidden;}
 </style>
 
