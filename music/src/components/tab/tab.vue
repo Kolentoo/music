@@ -6,7 +6,7 @@
     <mu-tab value="tab3" @active="handleActive" title="电台"/>
   </mu-tabs>
   <div v-if="activeTab === 'tab1'">
-        <swiper></swiper>
+        <swiper :msg="msg"></swiper>
         <recommend></recommend>
         <song></song>
   </div>
@@ -28,7 +28,9 @@
     export default {
     data () {
         return {
-        activeTab: 'tab1'
+            props:[],
+            activeTab: 'tab1',
+            msg:''
         }
     },
     components:{
@@ -41,6 +43,15 @@
         handleActive () {
         // window.alert('tab active')
         }
+    },
+    created(){
+        this.$axios.get('http://localhost:8888/personalized/privatecontent',{
+            parmas:{}
+        })
+        .then((res)=>{
+            console.log(res);
+            this.msg = res;
+        })
     }
 }
 </script>
